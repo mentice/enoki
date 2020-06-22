@@ -218,6 +218,10 @@ endmacro()
 
 include_directories(include)
 
+add_library(enoki INTERFACE)
+target_compile_features(enoki INTERFACE cxx_std_17)
+target_include_directories(enoki INTERFACE include)
+
 set(ENOKI_HEADERS
     ${PROJECT_SOURCE_DIR}/include/enoki/array.h
     ${PROJECT_SOURCE_DIR}/include/enoki/array_avx.h
